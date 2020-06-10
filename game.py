@@ -1,8 +1,10 @@
-import pygame, sys
+import pygame
+import sys
 from pygame.locals import *
 
 
 window_width, window_height = 800, 700
+
 
 def main():
     global FPSCLOCK, window
@@ -17,8 +19,8 @@ def main():
                 pygame.quit()
                 sys.exit()
 
+        pygame.Surface.fill(window, (255, 255, 255))
         pygame.display.update()
-
 
 
 if __name__ == "__main__":
