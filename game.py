@@ -1,16 +1,15 @@
 import pygame
 import sys
 from pygame.locals import *
-
-
-window_width, window_height = 800, 700
+from settings import Settings
+from game_function import check_keydown_events
 
 
 def main():
-    global FPSCLOCK, window
     pygame.init()
-    FPSCLOCK = pygame.time.Clock()
-    window = pygame.display.set_mode((window_width, window_height))
+    settings = Settings()
+    screen = pygame.display.set_mode(
+        settings.screen_width, settings.screen_height)
     pygame.display.set_caption('FUckY Sudoku')
 
     while True:
@@ -18,8 +17,6 @@ def main():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
-
-        pygame.Surface.fill(window, (255, 255, 255))
         pygame.display.update()
 
 
